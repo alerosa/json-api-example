@@ -6,7 +6,7 @@ var path     = require('path')
   , mongoose = require('mongoose');
 
 // Start by loading up all our mongoose models and connecting.
-mongoose.connect('mongodb://localhost/example');
+mongoose.connect('mongodb://db/jsonapi');
 var OrganizationModelSchema = require('./models/organization')
   , OrganizationModel       = OrganizationModelSchema.model
   , OrganizationSchema      = OrganizationModelSchema.schema;
@@ -63,5 +63,5 @@ app.use(function(req, res, next) {
 });
 
 // And we're done! Start 'er up!
-console.log('Starting up! Visit 127.0.0.1:3000 to see the docs.');
+console.log('Starting up! Visit 127.0.0.1:5000 to see the docs.');
 app.listen(3000);

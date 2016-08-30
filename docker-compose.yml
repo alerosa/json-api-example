@@ -1,0 +1,12 @@
+version: "2"
+services:
+  db:
+    image: mongo:3.2.7
+  jsonapi:
+    build: .
+    links:
+      - db:db
+    depends_on:
+      - db
+    ports:
+      - 5000:3000
